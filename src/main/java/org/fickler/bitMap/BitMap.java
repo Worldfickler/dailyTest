@@ -75,6 +75,14 @@ public class BitMap {
         bitMap.clear(3);    // bits[ 3 / 8 = 0] &= ~(1 << (3 % 8)) = 11110111
         System.out.println(bitMap.get(3)); // false
 
+
+        /**
+         * bitMap 怎么扩容？
+         * => 创建一个新的 bitMap，将旧的 bitMap 复制到新的 bitMap 中
+         */
+        BitMap newBitMap = new BitMap(32);
+        System.arraycopy(bitMap.bits, 0, newBitMap.bits, 0, bitMap.bits.length);
+
     }
 
 }
